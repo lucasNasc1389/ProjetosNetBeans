@@ -5,7 +5,10 @@
  */
 package br.com.bytebank.banco.teste;
 
+import br.com.bytebank.banco.modelo.Cliente;
 import br.com.bytebank.banco.modelo.ContaCorrente;
+import br.com.bytebank.banco.modelo.Conta;
+import br.com.bytebank.banco.modelo.ContaPoupanca;
 
 /**
  *
@@ -13,24 +16,26 @@ import br.com.bytebank.banco.modelo.ContaCorrente;
  */
 public class TesteArrayReferencias {
     
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         
-       ContaCorrente[] contas = new ContaCorrente[10];
+       Object[] referencias = new Object[10];
+       
        ContaCorrente cc1 = new ContaCorrente(555, 124578);
-       contas[0] = cc1;
+       referencias[0] = cc1;
        
-       ContaCorrente cc2 = new ContaCorrente(478, 895623);
-       contas[1] = cc2;
+       ContaPoupanca cc2 = new ContaPoupanca(478, 895623);
+       referencias[1] = cc2;
        
-       ContaCorrente cc3 = new ContaCorrente(478, 745896);
-       contas[2] = cc3; 
+       Cliente cliente = new Cliente();
+      // referencias[2] = cliente.setNome("Lucas");
+   
+ 
        
-       ContaCorrente ref = contas[2];
+        //System.out.println(referencias[0].getNumero());
+       // System.out.println(ref.);
+        System.out.println(referencias.length);
        
-        System.out.println(contas[1].getNumero());
-        System.out.println(contas[2].getNumero());
-        System.out.println(ref.getNumero());
        
         
-    }
+    }*/
 }
