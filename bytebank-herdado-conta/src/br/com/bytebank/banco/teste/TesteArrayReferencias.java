@@ -22,7 +22,14 @@ public class TesteArrayReferencias {
        ContaCorrente cc2 = new ContaCorrente(478, 895623);
        contas[1] = cc2;
        
+       ContaCorrente cc3 = new ContaCorrente(478, 745896);
+       contas[2] = cc3; 
+       
+       ContaCorrente ref = contas[2];
+       
         System.out.println(contas[1].getNumero());
+        System.out.println(contas[2].getNumero());
+        System.out.println(ref.getNumero());
        
         
     }
