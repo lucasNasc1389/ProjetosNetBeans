@@ -43,8 +43,14 @@ public class Teste {
         
         for (int i = 0; i < lista.size(); i++) {
             Object oref = lista.get(i);
-            System.out.println(oref);
+            System.out.println("* "+oref);
         }
+        System.out.println("---------");
+        //'for' Atualizado
+        for(Object oref : lista) {
+            System.out.println("# "+oref);
+        }
+        
         
         
         
