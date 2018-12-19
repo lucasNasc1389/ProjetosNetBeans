@@ -14,8 +14,8 @@ import java.util.ArrayList;
  *
  * @author User
  */
-public class Teste {
-    public static void main(String[] args) {
+public class TesteArrayList {
+    /*public static void main(String[] args) {
         //ArrayList só armazena referencias do tipo Conta
         // Caso não tivesse  <conta> guardaria qualquer tipo de objeto
         //Generics
@@ -56,10 +56,10 @@ public class Teste {
         
         
         
+       
         
         
         
         
-        
-    }
+    } */
 }
