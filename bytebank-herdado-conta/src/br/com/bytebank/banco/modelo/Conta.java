@@ -83,6 +83,7 @@ public abstract class Conta {
         if (this.agencia == outra.agencia) {
             
         }
+        return false;
     }
 
 }
