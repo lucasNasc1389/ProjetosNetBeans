@@ -16,14 +16,17 @@ import java.util.ArrayList;
  */
 public class Teste {
     public static void main(String[] args) {
-        
-        ArrayList lista = new ArrayList();
+        //ArrayList só armazena referencias do tipo Conta
+        // Caso não tivesse  <conta> guardaria qualquer tipo de objeto
+        //Generics
+        ArrayList<Conta> lista = new ArrayList();
         
         Conta cc1 = new ContaCorrente(555, 124578);
         lista.add(cc1);
        
        Conta cp2 = new ContaPoupanca(478, 895623);
        lista.add(cp2);
+       
        
         System.out.println(lista.size());
         
