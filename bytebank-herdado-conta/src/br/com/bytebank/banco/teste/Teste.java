@@ -16,7 +16,7 @@ import br.com.bytebank.banco.modelo.GuardadorDeContas;
  */
 public class Teste {
     public static void main(String[] args) {
-        
+        /*
         GuardadorDeContas guardador = new GuardadorDeContas();
         
         Conta cc = new ContaCorrente(22, 44);
@@ -45,7 +45,7 @@ public class Teste {
         System.out.println(ref.getNumero());
         System.out.println(ref1.getNumero());
         System.out.println(ref2.getNome());
-        System.out.println(ref3.getNome());
+        System.out.println(ref3.getNome());*/
     }
     
 }

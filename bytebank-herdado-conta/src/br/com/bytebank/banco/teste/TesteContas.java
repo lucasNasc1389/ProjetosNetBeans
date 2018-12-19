@@ -10,7 +10,7 @@ public class TesteContas {
 
 	public static void main(String[] args) {
             
-		ContaEspecial ce = new ContaEspecial(3344, 334456);
+		/*ContaEspecial ce = new ContaEspecial(3344, 334456);
 		ContaCorrente cc = new ContaCorrente(111, 111);
 		cc.deposita(100.0);
 		
@@ -23,7 +23,7 @@ public class TesteContas {
 		System.out.println("CP: " + cp.getSaldo());
                 
                 ce.getSaldo();
-
+*/
 
 	}
 
