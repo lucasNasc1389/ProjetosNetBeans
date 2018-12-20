@@ -17,7 +17,7 @@ import java.util.Vector;
  * @author User
  */
 public class TesteArrayListEquals {
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         //ArrayList só armazena referencias do tipo Conta
         // Caso não tivesse  <conta> guardaria qualquer tipo de objeto
         //Generics
@@ -50,5 +50,5 @@ public class TesteArrayListEquals {
         }
     
        
-    }
+    }*/
 }
