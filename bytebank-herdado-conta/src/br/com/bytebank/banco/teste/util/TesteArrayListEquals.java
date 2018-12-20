@@ -31,11 +31,13 @@ public class TesteArrayListEquals {
        
        boolean existe = lista.contains(cc3);
        
-        System.out.println("já existe? " +existe);
+        System.out.println("já existe? " + existe);
         
         for(Conta conta : lista) {
-            if(conta == cc3){
+            if(conta.equals(cc3)){
             System.out.println("Já tenho essa conta");
+            }else{
+                System.out.println("Ainda não tenho essa conta");
             }
         }
        
@@ -45,5 +47,6 @@ public class TesteArrayListEquals {
             System.out.println(conta);
         }
     
+       
     }
 }
