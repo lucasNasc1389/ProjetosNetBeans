@@ -17,7 +17,7 @@ import java.util.List;
  * @author lucas
  */
 public class TestesListas {
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         
                 Conta cc1 = new ContaCorrente(22, 33);
                 cc1.deposita(333.0);
@@ -68,5 +68,5 @@ public class TestesListas {
         
         return 0;
         }
-        
+        */
 }
