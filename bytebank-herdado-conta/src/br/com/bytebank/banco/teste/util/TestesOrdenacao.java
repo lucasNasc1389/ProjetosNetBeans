@@ -10,6 +10,7 @@ import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -66,6 +67,12 @@ public class TestesOrdenacao {
                 for (Conta conta : lista) {
                     System.out.println(conta + ", " + conta.getTitular().getNome());
                 }
+                
+                int[] numeros = new int[]{45,58,66,3,2};
+                Arrays.sort(numeros);
+                
+                System.out.println(Arrays.toString(numeros));
+                
 
         }
 }
@@ -99,6 +106,7 @@ public class TestesOrdenacao {
         
                         return 0;
                     }
-        
+                     
+     
     }
 

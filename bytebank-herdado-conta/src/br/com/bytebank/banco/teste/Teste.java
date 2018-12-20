@@ -8,6 +8,7 @@ import br.com.bytebank.banco.modelo.CalculadorDeImposto;
 import br.com.bytebank.banco.modelo.Cliente;
 import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
+import br.com.bytebank.banco.modelo.ContaPoupanca;
 import br.com.bytebank.banco.modelo.GuardadorDeContas;
 
 /**
@@ -22,7 +23,7 @@ public class Teste {
         Conta cc = new ContaCorrente(22, 44);
         guardador.adiciona(cc);
         
-        Conta cc2 = new ContaCorrente(55, 77);
+        Conta cc2 = new ContaPoupanca(55, 77);
         guardador.adiciona(cc2);
         
         Cliente cliente = new Cliente();
@@ -46,6 +47,7 @@ public class Teste {
         System.out.println(ref1.getNumero());
         System.out.println(ref2.getNome());
         System.out.println(ref3.getNome());
+        System.out.println(cc2);
     }*/
     
 }
