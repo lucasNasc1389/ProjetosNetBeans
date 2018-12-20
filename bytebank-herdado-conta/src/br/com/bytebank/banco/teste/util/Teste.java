@@ -13,7 +13,7 @@ import java.util.List;
  * @author lucas
  */
 public class Teste {
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         
        int idade = 29;
        Integer idadeRef = Integer.valueOf(29); //Autoboxing
@@ -33,5 +33,5 @@ public class Teste {
         numeros.add(29);
         
         
-    }
+    }*/
 }
