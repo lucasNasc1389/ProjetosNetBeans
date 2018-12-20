@@ -9,6 +9,8 @@ import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 /**
  *
@@ -19,7 +21,7 @@ public class TesteArrayListEquals {
         //ArrayList só armazena referencias do tipo Conta
         // Caso não tivesse  <conta> guardaria qualquer tipo de objeto
         //Generics
-        ArrayList<Conta> lista = new ArrayList();
+        List<Conta> lista = new Vector<Conta>();//thread safe
         
         Conta cc1 = new ContaCorrente(555, 124578);
         lista.add(cc1);
