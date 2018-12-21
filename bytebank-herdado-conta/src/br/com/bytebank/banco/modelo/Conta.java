@@ -1,8 +1,13 @@
 package br.com.bytebank.banco.modelo;
 
 
-
-public abstract class Conta {
+/**
+ * Classe representa a moldura de uma conta
+ * 
+ * @author Nico Steppat
+ *
+ */
+public abstract class Conta extends Object implements Comparable<Conta>{
 
     protected double saldo;
     private int agencia;
@@ -10,6 +15,12 @@ public abstract class Conta {
     private Cliente titular;
     private static int total = 0;
     
+    /**
+     * Construtor para inicializar o objeto Conta a partir da agencia e numero.
+     * 
+     * @param agencia
+     * @param numero
+     */
     public Conta(int agencia, int numero){
         Conta.total++;
         //System.out.println("O total de contas é " + Conta.total);
@@ -21,22 +32,24 @@ public abstract class Conta {
 
     public abstract void deposita(double valor);
 
-    public boolean saca(double valor) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
-            return true;
-        } else {
-            return false;
-        }
+    /**
+     * Valor precisa ser maior do que o saldo.
+     * 
+     * @param valor
+     * @throws SaldoInsuficienteException
+     */
+    public void saca(double valor) throws SaldoInsuficienteException{
+    	
+        if(this.saldo < valor) {
+            throw new SaldoInsuficienteException("Saldo: " + this.saldo + ", Valor: " + valor);
+        } 
+        
+        this.saldo -= valor;       
     }
 
-    public boolean transfere(double valor, Conta destino) {
-        if(this.saca(valor)) {
-        		destino.deposita(valor);
-        		return true;
-        } else {
-        		return false;
-        }
+    public void transfere(double valor, Conta destino) throws SaldoInsuficienteException{
+        this.saca(valor);
+        destino.deposita(valor);
     }
 
     public double getSaldo(){
@@ -77,33 +90,32 @@ public abstract class Conta {
 
     public static int getTotal(){
         return Conta.total;
-    }
+    }  
     
-    public boolean ehIgual(Conta outra) {
-        if (this.agencia != outra.agencia) {
-            return false;
-        }
-        if (this.numero != outra.numero) {
-            return false;
-        }
-        return true;
+    @Override
+    public boolean equals(Object ref) {
+    	
+    		Conta outra = (Conta) ref;
+    		
+    		if(this.agencia != outra.agencia) {
+    			return false;
+    		}
+    		
+    		if(this.numero != outra.numero) {
+    			return false;
+    		}
+    		
+    		return true;
     }
     
     @Override
-    public boolean equals(Object ref){
-        Conta outra = (Conta) ref;
-        if (this.agencia != outra.agencia) {
-            return false;
-        }
-        if (this.numero != outra.numero) {
-            return false;
-        }
-        return true;
+    public int compareTo(Conta outra) {
+    		return Double.compare(this.saldo, outra.saldo);
     }
     
     @Override
-    public String toString() {
-        return "Numero " + this.numero + ", Agencia: "+ this.agencia;
-    }
+	public String toString() {
+		return "Numero: " + this.numero + ", Agencia: " + this.agencia + ", Saldo: " + this.saldo;
+	}
 
 }
