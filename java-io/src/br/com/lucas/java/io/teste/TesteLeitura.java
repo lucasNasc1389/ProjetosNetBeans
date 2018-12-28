@@ -19,7 +19,7 @@ public class TesteLeitura {
         //Fluxo de entrada com um arquivo
         
         // Padrão decorator
-        FileInputStream file = new FileInputStream("arquivo para texto.txt");
+       /* FileInputStream file = new FileInputStream("arquivo para texto.txt");
         InputStreamReader isr = new InputStreamReader(file);
         BufferedReader br = new BufferedReader(isr);
         
@@ -30,6 +30,6 @@ public class TesteLeitura {
             linha = br.readLine();
         }
         
-        
+        */
     }
 }
