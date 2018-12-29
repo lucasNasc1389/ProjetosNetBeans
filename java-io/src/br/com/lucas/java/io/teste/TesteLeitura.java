@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
  * @author User
  */
 public class TesteLeitura {
-    public static void main(String[] args) throws IOException {
+   /* public static void main(String[] args) throws IOException {
         //Fluxo de entrada com um arquivo
         
         // Padrão decorator
@@ -30,6 +30,6 @@ public class TesteLeitura {
             linha = br.readLine();
         }
         
-        */
-    }
+        
+    }*/
 }
