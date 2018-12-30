@@ -1,0 +1,2 @@
+Exemplo com a biblioteca FileWriter, que pode ser usada de um modo mais simples
+do que nas usadas anteriormente

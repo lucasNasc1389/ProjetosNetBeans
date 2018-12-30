@@ -18,7 +18,7 @@ import java.io.OutputStreamWriter;
  * @author User
  */
 public class TesteCopiarArquivo {
-      public static void main(String[] args) throws IOException {
+      /*public static void main(String[] args) throws IOException {
         //Fluxo de entrada com um arquivo
         
         // Padrão decorator
@@ -43,5 +43,5 @@ public class TesteCopiarArquivo {
         bw.close();
         
         
-    }
+    }*/
 }
