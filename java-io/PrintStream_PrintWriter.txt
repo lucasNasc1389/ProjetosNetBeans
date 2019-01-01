@@ -1,0 +1,2 @@
+Exemplo com a biblioteca PrintStream.
+do que nas usadas anteriormente

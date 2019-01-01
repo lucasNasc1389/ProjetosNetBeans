@@ -14,12 +14,12 @@ import java.io.IOException;
  *
  * @author User
  */
-public class TesteEscrita2 {
-    public static void main(String[] args) throws IOException {
+public class TesteEscritaFileWriter {
+    /*public static void main(String[] args) throws IOException {
         
-        /*OutputStream fos = new FileOutputStream("lorem2.txt");
+        OutputStream fos = new FileOutputStream("lorem2.txt");
         OutputStreamWriter osw = new OutputStreamWriter(fos);
-        BufferedWriter bw = new BufferedWriter(osw);*/
+        BufferedWriter bw = new BufferedWriter(osw);
 
         BufferedWriter bw = new BufferedWriter(new FileWriter("Ex.com FileWriter.txt"));
         bw.write("Exemplo com a biblioteca FileWriter, que pode ser usada de um modo mais simples");
@@ -31,5 +31,5 @@ public class TesteEscrita2 {
        
         
         
-    }
+    } */
 }
