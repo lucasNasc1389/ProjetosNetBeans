@@ -1,32 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package br.com.lucas.java.io.teste;
+package br.com.alura.java.io.teste;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.io.PrintWriter;
 
-
-/**
- *
- * @author User
- */
 public class TesteEscritaPrintStreamPrintWriter {
-        public static void main(String[] args) throws IOException {
-        /* O PrintStream não possui o método write e sim o método print.
-        Ele também não tem o método newLine, então no caso de precisar 
-        pular uma linha após ela ser escrita, há o método println:*/
-        PrintStream ps = new PrintStream("PrintStream_PrintWriter.txt");
-        
-        ps.println("Exemplo com a biblioteca PrintStream.");
-        ps.print("do que nas usadas anteriormente");
-       
-       
-        ps.close();
-       
-        
-        
-    } 
+
+	public static void main(String[] args) throws IOException {
+		
+		//Fluxo de Entrada com Arquivo
+//		OutputStream fos = new FileOutputStream("lorem2.txt");
+//		Writer osw = new OutputStreamWriter(fos);
+//		BufferedWriter bw = new BufferedWriter(osw);
+		
+//		BufferedWriter bw = new BufferedWriter(new FileWriter("lorem2.txt"));
+//		PrintStream ps = new PrintStream(new File("lorem2.txt"));
+		PrintWriter ps = new PrintWriter("lorem2.txt","UTF-8");
+
+		ps.println("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod");
+		ps.println();
+		ps.println();
+		ps.println();
+		ps.println("asfasdfsafdas dfs sdf asf assdß");
+				
+		ps.close();
+		
+		System.out.println();
+		
+	}
 }
