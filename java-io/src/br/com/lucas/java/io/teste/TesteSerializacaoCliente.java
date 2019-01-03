@@ -16,22 +16,20 @@ import java.io.ObjectOutputStream;
  *
  * @author User
  */
-public class TesteSerializacao {
+public class TesteSerializacaoCliente {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         
-       /* Cliente cliente = new Cliente();
-        cliente.setNome("Lucas Nascimento");
-        cliente.setProfissao("Desenvolvedor");
-        cliente.setCpf("353.917.458-37");
+        String nome = "Lucas Nascimento";
         
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Cliente.bin"));
-        oos.writeObject(cliente);
+        /*ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("objeto.bin"));
+        
+        oos.writeObject(nome);
         oos.close();*/
         
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("cliente.bin"));
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("objeto"));
         
-        Cliente cliente = (Cliente) ois.readObject();
+        String name = (String) ois.readObject();
         ois.close();
-        System.out.println(cliente.getCpf());
+        System.out.println(name);
     }
 }
