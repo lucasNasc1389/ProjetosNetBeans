@@ -6,9 +6,9 @@ import java.nio.charset.StandardCharsets;
 
 public class TesteUnicodeEEncoding {
 
-	public static void main(String[] args) throws UnsupportedEncodingException {
+	/*public static void main(String[] args) throws UnsupportedEncodingException {
 		
-		String s = "ç";
+		String s = "ï¿½";
 		System.out.println(s.codePointAt(0));//unicode
 		
 		Charset charset = Charset.defaultCharset();
@@ -28,6 +28,6 @@ public class TesteUnicodeEEncoding {
 		System.out.print(bytes.length + ", US-ASCII, ");
 		sNovo = new String(bytes, "US-ASCII");
 		System.out.println(sNovo);
-	}
+	}*/
 
 }

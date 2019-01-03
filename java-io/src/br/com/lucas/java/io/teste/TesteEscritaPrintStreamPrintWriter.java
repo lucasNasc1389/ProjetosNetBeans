@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 
 public class TesteEscritaPrintStreamPrintWriter {
 
-	public static void main(String[] args) throws IOException {
+	/*public static void main(String[] args) throws IOException {
 		
 		//Fluxo de Entrada com Arquivo
 //		OutputStream fos = new FileOutputStream("lorem2.txt");
@@ -30,5 +30,5 @@ public class TesteEscritaPrintStreamPrintWriter {
 		
 		System.out.println();
 		
-	}
+	}*/
 }
