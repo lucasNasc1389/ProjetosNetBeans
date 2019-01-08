@@ -27,27 +27,36 @@ public class OrdenaStrings {
         Comparator<String> comparador = new ComparadorPorTamanho();
         Collections.sort(palavras, comparador);
         System.out.println(palavras);
-        
-        Consumer<String> consumidor = new ConsumidorDeString();
-        palavras.forEach(consumidor);
         System.out.println("");
         
-        palavras.sort(comparador);
-        System.out.println(palavras);
+       /* Consumer<String> consumidor = new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        };
+        
+        palavras.forEach(consumidor);
+        */
+       
+        //Poderíamos até mesmo evitar a criação da variável consumidor,
+        //passando a classe anônima diretamente para o forEach:
+        palavras.forEach(new Consumer<String>() {
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        });
+        
+        // ou então usando Lambda
+        palavras.forEach((String s) -> {
+            System.out.println(s);
+        });
+        
         
       
         
     }
 }
-
- class ConsumidorDeString implements Consumer<String> {
-
-    @Override
-    public void accept(String s) {
-        System.out.println(s);
-    }
-     
- } 
 
  class ComparadorPorTamanho implements Comparator<String>{
 
