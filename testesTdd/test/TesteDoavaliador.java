@@ -5,12 +5,11 @@
  */
 
 
-import br.com.lucas.leilao.teste.*;
 import br.com.lucas.leilao.Lance;
 import br.com.lucas.leilao.Leilao;
 import br.com.lucas.leilao.Usuario;
 import br.com.lucas.leilao.servico.Avaliador;
-import junit.framework.Assert;
+import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -22,7 +21,7 @@ public class TesteDoavaliador {
     // o método não pode ser estatico e nem receber argumentos
     // Também deve ser anotado com @Test
     @Test
-    public void main() {
+    public void deveEntenderLancesEmOrdemCrescente() {
         // Parte 1: Cenário
         Usuario joao = new Usuario("Huguinho");
         Usuario luizinho = new Usuario("Luizinho");
@@ -43,8 +42,8 @@ public class TesteDoavaliador {
         double menorEsperado = 250;
         
      //   System.out.println(maiorEsperado == leiloeiro.getMaiorLance());
-        Assert.assertEquals(maiorEsperado,leiloeiro.getMaiorLance(), 0.00001);
+        assertEquals(maiorEsperado,leiloeiro.getMaiorLance(), 0.00001);
        // System.out.println(menorEsperado == leiloeiro.getMenorDeTodos());
-        Assert.assertEquals(menorEsperado, leiloeiro.getMenorDeTodos(), 0.00001);
+        assertEquals(menorEsperado, leiloeiro.getMenorDeTodos(), 0.00001);
     }
 }
