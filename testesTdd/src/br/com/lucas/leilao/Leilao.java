@@ -12,10 +12,21 @@ public class Leilao {
 		this.descricao = descricao;
 		this.lances = new ArrayList<Lance>();
 	}
+
 	
 	public void propoe(Lance lance) {
+            int total = 0;
+            for(Lance l : lances) {
+                if(l.getUsuario().equals(lance.getUsuario())) total++;
+            }
+            
+            if(lances.isEmpty() || !ultimoLanceDado().getUsuario().equals(lance.getUsuario()) && total < 5)
 		lances.add(lance);
 	}
+
+    private Lance ultimoLanceDado() {
+        return lances.get(lances.size()-1);
+    }
 
 	public String getDescricao() {
 		return descricao;
@@ -24,6 +35,10 @@ public class Leilao {
 	public List<Lance> getLances() {
 		return Collections.unmodifiableList(lances);
 	}
+
+    public void propoe(Usuario django, double d) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 	
 	
