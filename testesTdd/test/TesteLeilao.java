@@ -92,4 +92,28 @@ public class TesteLeilao {
         assertEquals(958.0, ultimoLance.getValor(), 0.00001);
     }
     
+    @Test
+    public void devoDobrarUltimoLance() {
+        Leilao leilao = new Leilao("qualquer coisa");
+        Usuario user1 = new Usuario("Lucas");
+        Usuario user2 = new Usuario("Vitor");
+        
+        leilao.propoe(new Lance(user1, 2000));
+        leilao.propoe(new Lance(user2, 3000));
+        leilao.dobraLance(user1);
+        
+        assertEquals(4000.0, leilao.getLances().get(2).getValor(), 0.00001);
+    }
+    
+    @Test
+    public void naoDeveDobrarCasoNaoHajaLanceAnterior() {
+         Leilao leilao = new Leilao("qualquer coisa");
+         Usuario user1 = new Usuario("Lucas");
+         
+         leilao.dobraLance(user1);
+         
+         assertEquals(0, leilao.getLances().size());
+         
+    }
+    
 }

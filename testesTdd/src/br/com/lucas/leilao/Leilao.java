@@ -39,6 +39,20 @@ public class Leilao {
     public void propoe(Usuario django, double d) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+
+    
+    public void dobraLance(Usuario usuario) {
+        Lance ultimo = null;
+        
+        for(Lance lance : lances) {
+            if(lance.getUsuario().equals(usuario)) ultimo = lance;
+        }
+        if(ultimo != null){
+            propoe(new Lance(usuario, ultimo.getValor()*2));
+        }
+        
+    }
 
 	
 	

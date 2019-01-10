@@ -21,6 +21,13 @@ public class TesteDoAvaliador {
     // para que o jUnit entenda o método de teste temos que mudar a assinatura
     // o método não pode ser estatico e nem receber argumentos
     // Também deve ser anotado com @Test
+    
+    private Avaliador leiloeiro;
+    
+    private void criaAvaliador() {
+        Avaliador leiloeiro = new Avaliador();
+    }
+    
     @Test
     public void deveEntenderLancesEmOrdemCrescente() {
         // Parte 1: Cenário
@@ -35,7 +42,7 @@ public class TesteDoAvaliador {
         leilao.propoe(new Lance(zezinho, 400.0));
         
         // parte 2: ação
-        Avaliador leiloeiro = new Avaliador();
+        criaAvaliador();
         leiloeiro.avalia(leilao);
         
         // parte 3: Validação
@@ -55,7 +62,7 @@ public class TesteDoAvaliador {
         
         leilao.propoe(new Lance(django, 1000.00) );
         
-        Avaliador leiloeiro = new Avaliador();
+        criaAvaliador();
         leiloeiro.avalia(leilao);
         
         assertEquals(1000.0, leiloeiro.getMaiorLance(), 0.00001);
@@ -78,7 +85,7 @@ public class TesteDoAvaliador {
         leilao.propoe(new Lance(fred, 4100.0));
         leilao.propoe(new Lance(jason, 4500.0));
         
-        Avaliador leiloeiro = new Avaliador();
+        criaAvaliador();
         leiloeiro.avalia(leilao);
         
         List<Lance> maiores = leiloeiro.getTresMaiores();
@@ -103,7 +110,7 @@ public class TesteDoAvaliador {
         leilao.propoe(new Lance(anakin, 700));
         leilao.propoe(new Lance(yoda, 330));
         
-        Avaliador leiloeiro = new Avaliador();
+        criaAvaliador();
         leiloeiro.avalia(leilao);
         
         assertEquals(700, leiloeiro.getMaiorLance(), 0.0001);
