@@ -3,7 +3,9 @@ import br.com.lucas.leilao.Lance;
 import br.com.lucas.leilao.Leilao;
 import br.com.lucas.leilao.Usuario;
 import junit.framework.Assert;
+import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
+import org.junit.BeforeClass;
 
 import org.junit.Test;
 
@@ -19,6 +21,15 @@ import org.junit.Test;
  */
 public class TesteLeilao {
     
+    @BeforeClass
+    public static void testandoBeforeClass() {
+        System.out.println("before class");
+    }
+
+    @AfterClass
+    public static void testandoAfterClass() {
+        System.out.println("after class");
+    }
     @Test
     public void deveReceberUmLance() {
         Leilao leilao = new Leilao("Nintendo64 com 4 controles e 2 cartuchos");

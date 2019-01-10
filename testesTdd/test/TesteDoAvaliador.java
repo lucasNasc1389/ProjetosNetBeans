@@ -5,12 +5,15 @@
  */
 
 
+import buider.CriadorDeLeilao;
 import br.com.lucas.leilao.Lance;
 import br.com.lucas.leilao.Leilao;
 import br.com.lucas.leilao.Usuario;
 import br.com.lucas.leilao.servico.Avaliador;
 import java.util.List;
 import static junit.framework.Assert.assertEquals;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -23,18 +26,35 @@ public class TesteDoAvaliador {
     // Também deve ser anotado com @Test
     
     private Avaliador leiloeiro;
+    private Usuario huguinho;
+    private Usuario luizinho;
+    private Usuario zezinho;
     
-    private void criaAvaliador() {
-        Avaliador leiloeiro = new Avaliador();
+    @After
+    public void finaliza(){
+        System.out.println("fim");
+    }
+    
+    @Before
+    public void criaAvaliador() {
+       this.leiloeiro = new Avaliador();
+       this.huguinho = new Usuario("Huguinho");
+       this.luizinho = new Usuario("Luizinho");
+       this.zezinho = new Usuario("zezinho");
+    }
+    
+    @Test(expected = RuntimeException.class)
+    public void naoDeveAvaliarLeiloesSemNenhumLanceDado() {
+        Leilao leilao = new CriadorDeLeilao().para("playstation 3").constroi();
+        
+        leiloeiro.avalia(leilao);
+        
+        
     }
     
     @Test
     public void deveEntenderLancesEmOrdemCrescente() {
-        // Parte 1: Cenário
-        Usuario huguinho = new Usuario("Huguinho");
-        Usuario luizinho = new Usuario("Luizinho");
-        Usuario zezinho = new Usuario("zezinho");
-        
+
         Leilao leilao = new Leilao("Playstation 3 novo.");
         
         leilao.propoe(new Lance(huguinho, 250));
@@ -42,7 +62,6 @@ public class TesteDoAvaliador {
         leilao.propoe(new Lance(zezinho, 400.0));
         
         // parte 2: ação
-        criaAvaliador();
         leiloeiro.avalia(leilao);
         
         // parte 3: Validação
@@ -57,12 +76,12 @@ public class TesteDoAvaliador {
     
     @Test
     public void deveEntenderLeilaoComApenasUmLance() {
-        Usuario django = new Usuario("Django");
+     
         Leilao leilao = new Leilao("SuperFamicom com 100 cartuchos");
         
-        leilao.propoe(new Lance(django, 1000.00) );
+        leilao.propoe(new Lance(luizinho, 1000.00) );
         
-        criaAvaliador();
+
         leiloeiro.avalia(leilao);
         
         assertEquals(1000.0, leiloeiro.getMaiorLance(), 0.00001);
@@ -71,46 +90,38 @@ public class TesteDoAvaliador {
     
     @Test
     public void deveEncontrarOsTresMaioresLances() {
-        Usuario jason = new Usuario("Jason");
-        Usuario fred = new Usuario("Fred");
-        Leilao leilao = new Leilao("SegaDreamcast na caixa com 4 controles + 1 game");
         
-        leilao.propoe(new Lance(jason, 1250.0));
-        leilao.propoe(new Lance(fred, 2550.0));
-        leilao.propoe(new Lance(jason, 2650.0));
-        leilao.propoe(new Lance(fred, 2850.0));
-        leilao.propoe(new Lance(jason, 3050.0));
-        leilao.propoe(new Lance(fred, 3150.0));
-        leilao.propoe(new Lance(jason, 3500.0));
-        leilao.propoe(new Lance(fred, 4100.0));
-        leilao.propoe(new Lance(jason, 4500.0));
+        Leilao leilao = new CriadorDeLeilao().para("SegaDreamcast na caixa com 4 controles + 1 game")
+                .lance(huguinho, 100.0)
+                .lance(luizinho, 200.0)
+                .lance(huguinho, 300.0)
+                .lance(luizinho, 400.0)
+                .constroi();
         
-        criaAvaliador();
+                
         leiloeiro.avalia(leilao);
         
         List<Lance> maiores = leiloeiro.getTresMaiores();
         
         assertEquals(3, maiores.size());
-        assertEquals(4500.0, maiores.get(0).getValor(), 0.00001);
-        assertEquals(4100.0, maiores.get(1).getValor(), 0.00001);
-        assertEquals(3500.0, maiores.get(2).getValor(), 0.00001);
+        assertEquals(400.0, maiores.get(0).getValor(), 0.00001);
+        assertEquals(300.0, maiores.get(1).getValor(), 0.00001);
+        assertEquals(200.0, maiores.get(2).getValor(), 0.00001);
     }
     
     @Test
     public void deveEncontrarEmOrdemAleatoria() {
-        Usuario anakin = new Usuario("Anakin");
-        Usuario yoda = new Usuario("Yoda");
         
         Leilao leilao = new Leilao("Sabre de luz da grow série limitada");
         
-        leilao.propoe(new Lance(anakin, 400));
-        leilao.propoe(new Lance(yoda, 150));
-        leilao.propoe(new Lance(anakin, 260));
-        leilao.propoe(new Lance(yoda, 120));
-        leilao.propoe(new Lance(anakin, 700));
-        leilao.propoe(new Lance(yoda, 330));
+        leilao.propoe(new Lance(zezinho, 400));
+        leilao.propoe(new Lance(huguinho, 150));
+        leilao.propoe(new Lance(zezinho, 260));
+        leilao.propoe(new Lance(huguinho, 120));
+        leilao.propoe(new Lance(zezinho, 700));
+        leilao.propoe(new Lance(huguinho, 330));
         
-        criaAvaliador();
+
         leiloeiro.avalia(leilao);
         
         assertEquals(700, leiloeiro.getMaiorLance(), 0.0001);
